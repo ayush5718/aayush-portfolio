@@ -2,119 +2,162 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-000000?style=flat&logo=next.js)](https://nextjs.org/)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2Fmyportfolio)
 
-A beautiful, modern portfolio website built with Next.js, React, TypeScript, and TailwindCSS. Features smooth animations, dark mode support, and a built-in blog system. Perfect for developers looking to showcase their work and experience.
+A clean, modern portfolio website template built for developers. This project uses Next.js 16, React 19, and TypeScript to create a fast, responsive portfolio with smooth animations and a built-in blog.
 
-**✨ Built by Aayush**
+**Built by Aayush**
 
-## 🚀 Features
+## Features
 
-- **📝 Easy Configuration** - Setup takes just minutes by editing a single config file
-- **⚡ Modern Stack** - Built with Next.js 16, React 19, TypeScript, and TailwindCSS
-- **🎨 Beautiful UI** - Powered by [shadcn/ui](https://ui.shadcn.com/) components
-- **✨ Smooth Animations** - Custom animation components using Framer Motion
-- **📱 Fully Responsive** - Optimized for all devices and screen sizes
-- **🌙 Dark Mode** - Built-in theme switching support
-- **📰 Blog System** - Integrated blog with MDX support
-- **⚡ Fast & SEO-friendly** - Optimized for performance and search engines
-- **🚀 Deploy Ready** - Optimized for Vercel deployment
+This portfolio template includes everything you need to showcase your work:
 
-## 🛠️ Tech Stack
+- Single configuration file for easy customization
+- Responsive design that works on all devices
+- Dark mode support with theme switching
+- Smooth page animations using Framer Motion
+- Built-in blog system with MDX support
+- Modern UI components from shadcn/ui
+- Optimized for performance and SEO
+- Ready to deploy on Vercel
 
-- **Framework:** [Next.js 16](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [TailwindCSS](https://tailwindcss.com/)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Deployment:** [Vercel](https://vercel.com/)
+## Technology Stack
 
-## 📦 Getting Started
+- [Next.js 16](https://nextjs.org/) - React framework for production
+- [TypeScript](https://www.typescriptlang.org/) - Type safety and better developer experience
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Re-usable component library
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [Lucide React](https://lucide.dev/) - Icon library
+
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and npm/pnpm/yarn installed
-- Git
+You'll need Node.js 18 or later installed on your machine.
 
 ### Installation
 
-1. **Clone the repository**
+Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/myportfolio
-   cd myportfolio
-   ```
+```bash
+git clone https://github.com/ayush5718/aayush-portfolio.git
+cd aayush-portfolio
+```
 
-2. **Install dependencies**
+Install dependencies:
 
-   ```bash
-   npm install
-   # or
-   pnpm install
-   # or
-   yarn install
-   ```
+```bash
+npm install
+```
 
-3. **Start the development server**
+Start the development server:
 
-   ```bash
-   npm run dev
-   # or
-   pnpm dev
-   # or
-   yarn dev
-   ```
+```bash
+npm run dev
+```
 
-4. **Open your browser**
+Open [http://localhost:3000](http://localhost:3000) in your browser to see your portfolio.
 
-   Navigate to [http://localhost:3000](http://localhost:3000) to see your portfolio
+## Configuration
 
-## ⚙️ Configuration
+All portfolio content is managed through a single configuration file located at `src/data/resume.tsx`. This file contains:
 
-Edit the [`src/data/resume.tsx`](./src/data/resume.tsx) file to customize your portfolio with:
-
-- Personal information (name, bio, location)
-- Social media links
-- Work experience
-- Education
-- Skills
-- Projects
-- Hackathons and achievements
+**Personal Information**
+- Name, bio, and profile picture
 - Contact information
+- Social media links
 
-## 📝 Adding Blog Posts
+**Professional Experience**
+- Work history with company details
+- Job titles and descriptions
+- Employment dates
 
-Create new blog posts by adding MDX files to the appropriate directory. The blog system automatically picks up new posts and displays them with proper formatting.
+**Education**
+- Degrees and institutions
+- Graduation dates
 
-## 🚀 Deployment
+**Projects**
+- Project titles and descriptions
+- Technologies used
+- Links to live demos and repositories
 
-### Deploy to Vercel
+**Skills**
+- Technical skills and tools
+- Organized by category
 
-The easiest way to deploy your portfolio is with [Vercel](https://vercel.com):
+Simply edit this file to update your portfolio content. No need to touch any other files for content changes.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2Fmyportfolio)
+## Adding Blog Posts
 
-Or manually:
+Create new blog posts by adding MDX files to the content directory. The blog system will automatically detect and display new posts. Each post supports:
+
+- Markdown formatting
+- Syntax highlighting for code blocks
+- Embedded images and media
+- Custom React components
+
+## Building for Production
+
+Create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-## 📄 License
+Start the production server locally:
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+```bash
+npm start
+```
 
-## 🙏 Acknowledgments
+## Deployment
+
+### Deploying to Vercel
+
+This project is optimized for Vercel deployment. Connect your GitHub repository to Vercel and it will automatically deploy your portfolio.
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build settings
+4. Your portfolio will be live in minutes
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/              # Next.js app directory
+│   ├── components/       # React components
+│   │   ├── animations/   # Custom animation components
+│   │   └── ui/          # UI components from shadcn/ui
+│   ├── data/            # Configuration and content
+│   └── lib/             # Utility functions
+├── public/              # Static assets
+└── content/             # Blog posts (MDX files)
+```
+
+## Customization
+
+The portfolio uses CSS variables for theming, making it easy to customize colors. Edit `src/app/globals.css` to change:
+
+- Color scheme
+- Typography
+- Spacing
+- Border radius
+
+All components are built with TailwindCSS, so you can modify styling by editing the component files directly.
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Acknowledgments
+
+This portfolio uses several open source projects:
 
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Animations powered by [Framer Motion](https://www.framer.com/motion/)
 - Icons from [Lucide](https://lucide.dev/)
-
-## 💖 Support
-
-If you found this helpful, please give it a ⭐️!
+- Animations powered by [Framer Motion](https://www.framer.com/motion/)
 
 ---
 
-**Built with ❤️ by Aayush**
+Built with care by Aayush
