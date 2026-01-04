@@ -181,6 +181,28 @@ export const DATA = {
       image: "https://ik.imagekit.io/enhyxksyys/spacelabs-landingpage.png",
       video: "",
     },
+    {
+      title: "WedScribe – Wedding Biodata Maker",
+      href: "https://wedscribe.vercel.app/",
+      dates: "2025",
+      active: true,
+      description:
+        "Built a modern Indian wedding biodata maker that allows users to create clean, elegant, and shareable matrimonial profiles online. The platform focuses on simplicity, smooth form workflows, and responsive design to present personal, family, and professional details in a polished, easy-to-share format.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://wedscribe.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "https://ik.imagekit.io/enhyxksyys/wedscribe-landingpage.png",
+      video: "",
+    },
 
   ],
 
