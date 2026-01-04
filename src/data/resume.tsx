@@ -65,7 +65,6 @@ export const DATA = {
         navbar: false,
       },
     },
-
   },
 
   work: [
@@ -76,8 +75,8 @@ export const DATA = {
       location: "India",
       title: "Full Stack Developer",
       logoUrl: "https://ik.imagekit.io/enhyxksyys/favicon.png",
-      start: "Dec 2024",
-      end: "Mar 2025",
+      start: "Oct 2025",
+      end: "Present",
       description:
         "Built and launched a creator platform from scratch including authentication, creator dashboards, outfit uploads, and publishing workflows. Developed secure and scalable backend APIs, optimized media upload pipelines, and contributed to onboarding 500+ creators while improving platform performance and deployment workflows.",
     },
@@ -101,8 +100,8 @@ export const DATA = {
       href: "#",
       degree: "B.Tech in Engineering (CGPA: 7.94)",
       logoUrl: "https://tint.edu.in/images/tict_logo_new_2019.png",
-      start: "2021",
-      end: "2025",
+      start: "2025",
+      end: "Present",
     },
   ],
 
@@ -135,7 +134,7 @@ export const DATA = {
     {
       title: "MonoCRM – Modern Sales CRM",
       href: "#",
-      dates: "2024",
+      dates: "2025",
       active: true,
       description:
         "A high-performance CRM platform featuring a dynamic Kanban sales pipeline, real-time lead tracking, and interactive KPI dashboards. Implemented global state management using Zustand and analytics visualization using Recharts.",
@@ -158,6 +157,31 @@ export const DATA = {
       image: "https://ik.imagekit.io/enhyxksyys/monoCRM_project.png",
       video: "",
     },
+    {
+      title: "SpaceLabs Creative Studios – Landing Page",
+      href: "https://spacelabs-dusky.vercel.app/",
+      dates: "2025",
+      active: true,
+      description:
+        "Designed and developed a modern, high-impact landing page for SpaceLabs Creative Studios, a creative agency focused on science and technology brands. Built with a strong emphasis on motion, storytelling, and performance, featuring smooth scroll-based animations, clean typography, and a responsive layout that clearly communicates brand value.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "GSAP",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://spacelabs-dusky.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "https://ik.imagekit.io/enhyxksyys/spacelabs-landingpage.png",
+      video: "",
+    },
+
   ],
 
   hackathons: [
