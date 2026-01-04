@@ -1,0 +1,251 @@
+---
+title: "Building Modern Web Apps with Next.js and Supabase in 2026"
+publishedAt: "2026-01-04"
+summary: "A practical guide to building full-stack web applications using Next.js 16 and Supabase, covering authentication, database operations, and deployment best practices."
+image: "/og?title=Building%20Modern%20Web%20Apps%20with%20Next.js%20and%20Supabase"
+---
+
+The combination of **Next.js** and **Supabase** has become one of the most powerful stacks for building modern web applications. In this guide, I'll share the patterns and practices I've learned while building production apps with this stack.
+
+## Why Next.js + Supabase?
+
+This stack offers several advantages:
+
+- **Full-stack TypeScript** - Type safety from database to frontend
+- **Server Components** - Fetch data directly on the server
+- **Built-in Auth** - Supabase provides authentication out of the box
+- **Real-time subscriptions** - Live updates without complex setup
+- **Edge-ready** - Deploy globally with minimal latency
+
+## Project Setup
+
+Start by creating a new Next.js project with TypeScript:
+
+```bash
+npx create-next-app@latest my-app --typescript --tailwind --app
+cd my-app
+npm install @supabase/supabase-js @supabase/ssr
+```
+
+## Environment Configuration
+
+Create a `.env.local` file with your Supabase credentials:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+## Creating the Supabase Client
+
+For server components, create a utility that handles cookies properly:
+
+```typescript
+// lib/supabase/server.ts
+import { createServerClient } from '@supabase/ssr'
+import { cookies } from 'next/headers'
+
+export async function createClient() {
+  const cookieStore = await cookies()
+  
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) =>
+            cookieStore.set(name, value, options)
+          )
+        },
+      },
+    }
+  )
+}
+```
+
+## Authentication Flow
+
+Supabase makes authentication straightforward. Here's a simple login form:
+
+```typescript
+'use client'
+
+import { createClient } from '@/lib/supabase/client'
+import { useState } from 'react'
+
+export function LoginForm() {
+  const [email, setEmail] = useState('')
+  const supabase = createClient()
+
+  async function handleLogin() {
+    await supabase.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
+      },
+    })
+  }
+
+  return (
+    <form onSubmit={(e) => { e.preventDefault(); handleLogin() }}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+      />
+      <button type="submit">Send Magic Link</button>
+    </form>
+  )
+}
+```
+
+## Database Operations
+
+### Fetching Data in Server Components
+
+```typescript
+// app/posts/page.tsx
+import { createClient } from '@/lib/supabase/server'
+
+export default async function PostsPage() {
+  const supabase = await createClient()
+  
+  const { data: posts, error } = await supabase
+    .from('posts')
+    .select('*')
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    return <div>Error loading posts</div>
+  }
+
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
+
+### Inserting Data with Server Actions
+
+```typescript
+// app/posts/actions.ts
+'use server'
+
+import { createClient } from '@/lib/supabase/server'
+import { revalidatePath } from 'next/cache'
+
+export async function createPost(formData: FormData) {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from('posts')
+    .insert({
+      title: formData.get('title'),
+      content: formData.get('content'),
+    })
+
+  if (error) {
+    throw new Error('Failed to create post')
+  }
+
+  revalidatePath('/posts')
+}
+```
+
+## Row Level Security
+
+Always enable RLS on your Supabase tables. Here's an example policy:
+
+```sql
+-- Enable RLS
+ALTER TABLE posts ENABLE ROW LEVEL SECURITY;
+
+-- Users can read all posts
+CREATE POLICY "Public read access"
+  ON posts FOR SELECT
+  USING (true);
+
+-- Users can only insert their own posts
+CREATE POLICY "Users can insert own posts"
+  ON posts FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+-- Users can only update their own posts
+CREATE POLICY "Users can update own posts"
+  ON posts FOR UPDATE
+  USING (auth.uid() = user_id);
+```
+
+## Real-time Subscriptions
+
+For live updates, use Supabase's real-time feature:
+
+```typescript
+'use client'
+
+import { createClient } from '@/lib/supabase/client'
+import { useEffect, useState } from 'react'
+
+export function LivePosts() {
+  const [posts, setPosts] = useState([])
+  const supabase = createClient()
+
+  useEffect(() => {
+    const channel = supabase
+      .channel('posts-changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'posts' },
+        (payload) => {
+          console.log('Change received!', payload)
+          // Handle the change
+        }
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [])
+
+  return <div>{/* Render posts */}</div>
+}
+```
+
+## Performance Tips
+
+1. **Use React Server Components** - Fetch data on the server to reduce client bundle size
+2. **Enable connection pooling** - Use Supabase's pooler for better performance
+3. **Add database indexes** - Index frequently queried columns
+4. **Cache aggressively** - Use Next.js caching for static data
+5. **Optimize images** - Use Supabase Storage with transformations
+
+## Deployment Checklist
+
+Before deploying to production:
+
+- [ ] Enable Row Level Security on all tables
+- [ ] Set up proper environment variables
+- [ ] Configure custom domain in Supabase
+- [ ] Enable email templates for auth
+- [ ] Set up database backups
+- [ ] Monitor with Supabase Dashboard
+
+## Conclusion
+
+Next.js and Supabase together provide everything you need to build production-ready applications. The combination of server components, built-in authentication, and real-time capabilities makes development fast and enjoyable.
+
+Start building and ship your next project with confidence!
+
+---
+
+*Have questions about this stack? Feel free to reach out on Twitter or LinkedIn.*
