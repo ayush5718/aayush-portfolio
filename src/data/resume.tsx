@@ -83,7 +83,7 @@ export const DATA = {
     },
     {
       company: "Envizn Labs",
-      href: "#",
+      href: "https://enviznlabs.com/",
       badges: ["Internship"],
       location: "New Town, India",
       title: "Full Stack Development Intern",
