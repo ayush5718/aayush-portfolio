@@ -76,7 +76,7 @@ export const DATA = {
       location: "India",
       title: "Full Stack Developer",
       logoUrl: "https://ik.imagekit.io/enhyxksyys/favicon.png",
-      start: "Oct 2025",
+      start: "May 2025",
       end: "Present",
       description:
         "Built and launched a creator platform from scratch including authentication, creator dashboards, outfit uploads, and publishing workflows. Developed secure and scalable backend APIs, optimized media upload pipelines, and contributed to onboarding 500+ creators while improving platform performance and deployment workflows.",
