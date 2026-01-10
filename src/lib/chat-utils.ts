@@ -19,7 +19,7 @@ export function getSystemPrompt() {
         .map((e) => `- ${e.school} (${e.degree}): From ${e.start} to ${e.end}.`)
         .join("\n");
 
-    const skills = DATA.skills.join(", ");
+    const skills = Object.values(DATA.skills).flat().join(", ");
 
     return `
 You are an AI assistant for Aayush Kumar's portfolio. Your name is "Aayush's AI".
