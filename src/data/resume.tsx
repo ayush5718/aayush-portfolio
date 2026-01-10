@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Full Stack Developer with a passion for building high-performance products and shipping production-ready code.",
   summary:
-    "I am a Full Stack Developer with 1.5 years of experience focused on building and scaling software from the very first line of code. Currently at Lewkk, a Bengaluru based startup, I led the development of the end to end infrastructure for a creator platform that now supports over 500 active users. My expertise covers the entire development lifecycle, from architecting backend APIs and managing databases to crafting premium frontend experiences and handling production ready deployments. I enjoy solving complex technical challenges, whether that means streamlining DevOps workflows or integrating AI to build smarter and faster applications.",
+    "I am a Full Stack Developer with 1.5 years of experience focused on building and scaling software from the very first line of code. Currently at Lewkk, a Bengaluru based startup, I led the development of the end to end infrastructure for a creator platform that now supports over 1000+ active users. My expertise covers the entire development lifecycle, from architecting backend APIs and managing databases to crafting premium frontend experiences and handling production ready deployments. I enjoy solving complex technical challenges, whether that means streamlining DevOps workflows or integrating AI to build smarter and faster applications.",
   avatarUrl: "https://ik.imagekit.io/enhyxksyys/myimg.png",
 
   skills: {
@@ -111,7 +111,7 @@ export const DATA = {
     {
       school: "Techno International Newtown",
       href: "#",
-      degree: "B.Tech in Engineering (CGPA: 7.94)",
+      degree: "B.Tech in Electronics",
       logoUrl: "https://tint.edu.in/images/tict_logo_new_2019.png",
       start: "2021",
       end: "2025",
