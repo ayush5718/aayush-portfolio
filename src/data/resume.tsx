@@ -108,12 +108,12 @@ export const DATA = {
 
   projects: [
     {
-      title: "VTRON AI – Virtual Try-On Platform",
+      title: "VTRON AI Virtual Try-On Platform",
       href: "https://virtualtryon.in",
       dates: "2024 – Present",
       active: true,
       description:
-        "An AI-powered virtual try-on SaaS that replaces physical photoshoots with realistic, high-fidelity model renders. Built a serverless image pipeline ensuring 1:1 texture preservation, realistic garment draping, and scalable B2B workflows with secure authentication and credit-based usage.",
+        "I developed an AI-driven SaaS that allows users to try on clothes virtually, replacing the need for physical photoshoots. I built a custom serverless pipeline to handle model renders with high texture quality and implemented a credit-based system for B2B users.",
       technologies: [
         "Next.js 14",
         "TypeScript",
@@ -133,12 +133,37 @@ export const DATA = {
       video: "",
     },
     {
-      title: "MonoCRM – Modern Sales CRM",
+      title: "JSONPro Developer Tooling Platform",
+      href: "https://jsonpro.designbyte.dev",
+      dates: "2025",
+      active: true,
+      description:
+        "I built this advanced tool to help developers work with JSON data more efficiently. It includes powerful features for diffing payloads, visualizing data in charts, and generating curl commands instantly. I focused on making the interface fast and modular using a component-driven approach with React and TypeScript.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "pnpm",
+        "Component-Driven Design",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://jsonpro.designbyte.dev",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "https://ik.imagekit.io/enhyxksyys/Screenshot%202026-01-10%20183357.png",
+      video: "",
+    },
+    {
+      title: "MonoCRM Modern Sales CRM",
       href: "#",
       dates: "2025",
       active: true,
       description:
-        "A high-performance CRM platform featuring a dynamic Kanban sales pipeline, real-time lead tracking, and interactive KPI dashboards. Implemented global state management using Zustand and analytics visualization using Recharts.",
+        "I created this CRM to provide teams with a clear view of their sales performance. It features a dynamic Kanban board for lead tracking and real-time KPI dashboards. I used Zustand for smooth state management and Recharts to build the interactive analytics visualizations.",
       technologies: [
         "React 19",
         "TypeScript",
@@ -159,12 +184,12 @@ export const DATA = {
       video: "",
     },
     {
-      title: "SpaceLabs Creative Studios – Landing Page",
+      title: "SpaceLabs Creative Studios Landing Page",
       href: "https://spacelabs-dusky.vercel.app/",
       dates: "2025",
       active: true,
       description:
-        "Designed and developed a modern, high-impact landing page for SpaceLabs Creative Studios, a creative agency focused on science and technology brands. Built with a strong emphasis on motion, storytelling, and performance, featuring smooth scroll-based animations, clean typography, and a responsive layout that clearly communicates brand value.",
+        "I designed and built this high-impact landing page for a creative agency. I focused heavily on storytelling and motion, using smooth scroll-based animations and clean typography to create a premium experience that effectively communicates the brand's value.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -183,12 +208,12 @@ export const DATA = {
       video: "",
     },
     {
-      title: "WedScribe – Wedding Biodata Maker",
+      title: "WedScribe Online Wedding Biodata Maker",
       href: "https://wedscribe.vercel.app/",
       dates: "2025",
       active: true,
       description:
-        "Built a modern Indian wedding biodata maker that allows users to create clean, elegant, and shareable matrimonial profiles online. The platform focuses on simplicity, smooth form workflows, and responsive design to present personal, family, and professional details in a polished, easy-to-share format.",
+        "I built this platform to help people create elegant and shareable Indian wedding biodatas online. I designed a simple, step-by-step form workflow to make the complex process of entering family and personal details feel easy and polished for users.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
       links: [
         {
