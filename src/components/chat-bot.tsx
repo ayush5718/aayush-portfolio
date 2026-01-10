@@ -64,17 +64,17 @@ export function ChatBot() {
     };
 
     return (
-        <div className="fixed bottom-24 right-6 sm:bottom-6 z-50 flex flex-col items-end">
+        <div className="fixed bottom-24 right-4 sm:right-6 sm:bottom-6 z-50 flex flex-col items-end">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                        className="mb-4 w-[calc(100vw-3rem)] sm:w-[400px] h-[550px] max-h-[70vh] sm:max-h-[500px] shadow-2xl rounded-[28px] overflow-hidden"
+                        className="mb-4 w-[calc(100vw-2rem)] xs:w-[350px] sm:w-[400px] h-[450px] sm:h-[550px] max-h-[60vh] sm:max-h-[70vh] shadow-2xl rounded-[28px] overflow-hidden"
                     >
                         <Card className="h-full flex flex-col border-primary/20 bg-background/95 backdrop-blur-xl rounded-[28px] overflow-hidden border-none shadow-none">
-                            <CardHeader className="flex flex-row items-center justify-between space-y-0 p-5 bg-primary/5 border-b shrink-0">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 p-4 sm:p-5 bg-primary/5 border-b shrink-0">
                                 <div className="flex items-center gap-3">
                                     <div className="size-9 bg-primary rounded-[14px] flex items-center justify-center shadow-sm">
                                         <Bot className="size-5 text-primary-foreground" />
