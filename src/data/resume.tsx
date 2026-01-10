@@ -24,11 +24,16 @@ export const DATA = {
     "Tailwind CSS",
     "React Native",
     "Zustand",
+    "MongoDB",
     "PostgreSQL",
     "SQL",
     "C++",
+    "Java",
+    "AWS",
     "CI/CD",
     "Cloudinary",
+    "Framer Motion",
+    "GSAP",
   ],
 
   navbar: [
