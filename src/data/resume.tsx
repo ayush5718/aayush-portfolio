@@ -8,9 +8,9 @@ export const DATA = {
   location: "Kolkata, West Bengal, India",
   locationLink: "https://www.google.com/maps/place/Kolkata",
   description:
-    "Full Stack Developer building scalable SaaS products with modern web technologies and AI.",
+    "Full Stack Developer with a passion for building high-performance products and shipping production-ready code.",
   summary:
-    "I am a B.Tech student specializing in full-stack development with a strong focus on modern SaaS platforms. I’ve built AI-powered and enterprise-grade applications using Next.js, React, TypeScript, and Supabase. My experience includes building creator platforms, AI virtual try-on systems, and CRM dashboards. I enjoy turning complex ideas into clean, scalable products and continuously learning new technologies.",
+    "I am a Full Stack Developer with 1.5 years of experience focused on building and scaling software from the very first line of code. Currently at Lewkk, a Bengaluru based startup, I led the development of the end to end infrastructure for a creator platform that now supports over 500 active users. My expertise covers the entire development lifecycle, from architecting backend APIs and managing databases to crafting premium frontend experiences and handling production ready deployments. I enjoy solving complex technical challenges, whether that means streamlining DevOps workflows or integrating AI to build smarter and faster applications.",
   avatarUrl: "https://ik.imagekit.io/enhyxksyys/myimg.png",
 
   skills: {
@@ -72,26 +72,38 @@ export const DATA = {
     {
       company: "Lewkk.in",
       href: "https://lewkk.in",
-      badges: ["On-site"],
-      location: "India",
-      title: "Full Stack Developer",
+      badges: ["Bengaluru", "On-site"],
+      location: "Bengaluru, India",
+      title: "Associate Software Developer",
       logoUrl: "https://ik.imagekit.io/enhyxksyys/favicon.png",
       start: "May 2025",
       end: "Present",
       description:
-        "Built and launched a creator platform from scratch including authentication, creator dashboards, outfit uploads, and publishing workflows. Developed secure and scalable backend APIs, optimized media upload pipelines, and contributed to onboarding 500+ creators while improving platform performance and deployment workflows.",
+        "I joined as one of the early developers to architect and launch the entire infrastructure for a creator-focused platform. I built the core publishing engine and high-performance media pipelines that now support over 500 active creators. My daily work involves scaling backend APIs, managing production servers, and ensuring everything from authentication to real-time analytics runs smoothly for our growing user base.",
     },
     {
       company: "Envizn Labs",
       href: "#",
       badges: ["Internship"],
-      location: "India",
-      title: "Web Developer Intern",
+      location: "New Town, India",
+      title: "Full Stack Development Intern",
       logoUrl: "https://ik.imagekit.io/enhyxksyys/envizn_logo.png",
       start: "Dec 2024",
       end: "Mar 2025",
       description:
-        "Worked on Webflow and React-based projects, delivering responsive and high-quality web experiences. Collaborated with teams on UI implementation, code reviews, and project delivery under tight deadlines.",
+        "During this internship, I worked on both React applications and Webflow-based projects to deliver high-quality web experiences. I was responsible for implementing responsive designs, conducting code reviews, and working closely with the team to meet tight production deadlines.",
+    },
+    {
+      company: "V-Book",
+      href: "#",
+      badges: ["Internship"],
+      location: "West Bengal, India",
+      title: "Frontend Developer Intern",
+      logoUrl: "https://ik.imagekit.io/enhyxksyys/1689522514704.jpg",
+      start: "Jan 2024",
+      end: "Mar 2024",
+      description:
+        "I helped develop and launch the company’s main website using the MERN stack. My focus was on building a clean, functional frontend and ensuring a smooth user experience from the first visit.",
     },
   ],
 
@@ -233,7 +245,7 @@ export const DATA = {
       dates: "2023",
       location: "Kolkata, India",
       description:
-        "Ranked 6th out of 130 teams and 1st in our group for proposing an AI-powered telemedicine kiosk system.",
+        "My team and I built a concept for an AI-powered telemedicine kiosk. We ranked 6th out of 130 teams overall and 1st in our specific group during the internal college round of the Smart India Hackathon.",
       image: "",
       links: [],
     },
