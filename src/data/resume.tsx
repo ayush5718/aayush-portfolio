@@ -75,7 +75,7 @@ export const DATA = {
       badges: ["Bengaluru", "On-site"],
       location: "Bengaluru, India",
       title: "Associate Software Developer",
-      logoUrl: "https://ik.imagekit.io/enhyxksyys/favicon.png",
+      logoUrl: "https://ik.imagekit.io/enhyxksyys/589905032_17975299907950135_1926094093943893250_n.jpg",
       start: "May 2025",
       end: "Present",
       description:
@@ -239,14 +239,32 @@ export const DATA = {
     },
   ],
 
-  hackathons: [
+  activities: [
+    {
+      title: "Core Member, TINT Photography Club",
+      dates: "2021 – 2025",
+      location: "Kolkata, India",
+      description:
+        "As a core member of the photography club, I led various visual storytelling initiatives, conducted workshops for juniors, and managed the complete photography and videography logistics for our major college events and fests.",
+      image: "https://ik.imagekit.io/enhyxksyys/Screenshot%202026-01-10%20195506.png",
+      links: [],
+    },
+    {
+      title: "Event Organizer - Freshers & College Fests",
+      dates: "2022 – 2024",
+      location: "Kolkata, India",
+      description:
+        "I was part of the core team responsible for organizing large-scale college events, including the Freshers' Welcome and annual fests. I handled everything from team coordination and logistics to ensuring a smooth experience for hundreds of students.",
+      image: "https://tint.edu.in/images/tict_logo_new_2019.png",
+      links: [],
+    },
     {
       title: "Smart India Hackathon (Internal)",
       dates: "2023",
       location: "Kolkata, India",
       description:
         "My team and I built a concept for an AI-powered telemedicine kiosk. We ranked 6th out of 130 teams overall and 1st in our specific group during the internal college round of the Smart India Hackathon.",
-      image: "",
+      image: "https://ik.imagekit.io/enhyxksyys/SIH2.webp",
       links: [],
     },
   ],

@@ -19,6 +19,10 @@ export function getSystemPrompt() {
         .map((e) => `- ${e.school} (${e.degree}): From ${e.start} to ${e.end}.`)
         .join("\n");
 
+    const activitiesInfo = DATA.activities
+        .map((a) => `- ${a.title}: ${a.description}. Location: ${a.location}. Dates: ${a.dates}.`)
+        .join("\n");
+
     const skills = Object.values(DATA.skills).flat().join(", ");
 
     return `
@@ -53,6 +57,9 @@ ${eduInfo}
 
 **PROJECTS:**
 ${projectInfo}
+
+**EXTRA-CURRICULAR ACTIVITIES & LEADERSHIP:**
+${activitiesInfo}
 
 **CONTACT:**
 - Email: ${DATA.contact.email}

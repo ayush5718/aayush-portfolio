@@ -46,7 +46,7 @@ export const ResumeCard = ({
     >
       <Card className="flex">
         <div className="flex-none">
-          <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
+          <Avatar className="border size-12 m-auto bg-transparent ">
             <AvatarImage
               src={logoUrl}
               alt={altText}
@@ -55,23 +55,25 @@ export const ResumeCard = ({
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
-        <div className="flex-grow ml-4 items-center flex-col group">
+        <div className="flex-grow ml-3 items-center flex-col group">
           <CardHeader>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-1 sm:gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm flex-wrap gap-1">
-                {title}
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="font-semibold leading-none text-xs sm:text-sm">
+                  {title}
+                </h3>
                 {badges && (
-                  <span className="inline-flex flex-wrap gap-1">
+                  <div className="inline-flex flex-wrap gap-1">
                     {badges.map((badge, index) => (
                       <Badge
                         variant="secondary"
-                        className="align-middle text-[10px] sm:text-xs whitespace-nowrap"
+                        className="align-middle text-[10px] sm:text-xs px-1 y-0"
                         key={index}
                       >
                         {badge}
                       </Badge>
                     ))}
-                  </span>
+                  </div>
                 )}
                 <ChevronRightIcon
                   className={cn(
@@ -79,12 +81,12 @@ export const ResumeCard = ({
                     isExpanded ? "rotate-90" : "rotate-0"
                   )}
                 />
-              </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground sm:text-right shrink-0">
+              </div>
+              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground whitespace-nowrap">
                 {period}
               </div>
             </div>
-            {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
+            {subtitle && <div className="font-sans text-xs mt-1 text-muted-foreground">{subtitle}</div>}
           </CardHeader>
           {description && (
             <motion.div
