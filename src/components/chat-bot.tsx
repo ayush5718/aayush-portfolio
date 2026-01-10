@@ -64,24 +64,30 @@ export function ChatBot() {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <div className="fixed bottom-24 right-6 sm:bottom-6 z-50 flex flex-col items-end">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                        className="mb-4 w-[350px] sm:w-[400px] h-[500px] shadow-2xl"
+                        className="mb-4 w-[calc(100vw-3rem)] sm:w-[400px] h-[550px] max-h-[70vh] sm:max-h-[500px] shadow-2xl rounded-[28px] overflow-hidden"
                     >
-                        <Card className="h-full flex flex-col border-primary/20 bg-background/95 backdrop-blur-md">
-                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 bg-primary/5">
-                                <div className="flex items-center gap-2">
-                                    <div className="p-2 bg-primary rounded-full">
-                                        <Bot className="size-4 text-primary-foreground" />
+                        <Card className="h-full flex flex-col border-primary/20 bg-background/95 backdrop-blur-xl rounded-[28px] overflow-hidden border-none shadow-none">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 p-5 bg-primary/5 border-b shrink-0">
+                                <div className="flex items-center gap-3">
+                                    <div className="size-9 bg-primary rounded-[14px] flex items-center justify-center shadow-sm">
+                                        <Bot className="size-5 text-primary-foreground" />
                                     </div>
-                                    <CardTitle className="text-sm font-bold">Aayush&apos;s AI Assistant</CardTitle>
+                                    <div className="flex flex-col">
+                                        <CardTitle className="text-sm font-bold tracking-tight">AI Assistant</CardTitle>
+                                        <span className="text-[10px] text-muted-foreground flex items-center gap-1">
+                                            <span className="size-1.5 bg-green-500 rounded-full animate-pulse" />
+                                            Online
+                                        </span>
+                                    </div>
                                 </div>
-                                <Button variant="ghost" size="icon" className="size-8" onClick={() => setIsOpen(false)}>
+                                <Button variant="ghost" size="icon" className="size-8 rounded-full hover:bg-primary/10 transition-colors" onClick={() => setIsOpen(false)}>
                                     <X className="size-4" />
                                 </Button>
                             </CardHeader>
@@ -99,13 +105,13 @@ export function ChatBot() {
                                                 )}
                                             >
                                                 <div className={cn(
-                                                    "p-2 rounded-full shrink-0",
+                                                    "p-2 rounded-[12px] shrink-0 mt-1",
                                                     msg.role === "user" ? "bg-primary/10" : "bg-muted"
                                                 )}>
-                                                    {msg.role === "user" ? <User className="size-3" /> : <Bot className="size-3" />}
+                                                    {msg.role === "user" ? <User className="size-3.5" /> : <Bot className="size-3.5" />}
                                                 </div>
                                                 <div className={cn(
-                                                    "p-3 rounded-2xl text-sm leading-relaxed overflow-hidden",
+                                                    "p-3.5 rounded-[20px] text-[13px] leading-relaxed overflow-hidden",
                                                     msg.role === "user"
                                                         ? "bg-primary text-primary-foreground rounded-tr-none"
                                                         : "bg-muted text-foreground rounded-tl-none border border-border"
@@ -118,11 +124,11 @@ export function ChatBot() {
                                         ))}
                                         {isLoading && (
                                             <div className="flex items-start gap-2">
-                                                <div className="p-2 rounded-full bg-muted">
-                                                    <Bot className="size-3" />
+                                                <div className="p-2 rounded-[12px] bg-muted mt-1">
+                                                    <Bot className="size-3.5" />
                                                 </div>
-                                                <div className="bg-muted p-3 rounded-2xl rounded-tl-none border border-border">
-                                                    <Loader2 className="size-4 animate-spin" />
+                                                <div className="bg-muted p-3.5 rounded-[20px] rounded-tl-none border border-border">
+                                                    <Loader2 className="size-4 animate-spin text-primary" />
                                                 </div>
                                             </div>
                                         )}
@@ -130,19 +136,19 @@ export function ChatBot() {
                                     </div>
                                 </ScrollArea>
                             </CardContent>
-                            <CardFooter className="p-3 border-t bg-muted/30">
+                            <CardFooter className="p-4 border-t bg-muted/20 shrink-0">
                                 <form
                                     onSubmit={(e: React.FormEvent) => { e.preventDefault(); handleSend(); }}
                                     className="flex w-full items-center gap-2"
                                 >
                                     <Input
-                                        placeholder="Ask me anything about Aayush..."
+                                        placeholder="Ask me anything..."
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
-                                        className="flex-1 h-10 bg-background"
+                                        className="flex-1 h-11 bg-background rounded-[16px] border-primary/10 focus-visible:ring-primary/20"
                                     />
-                                    <Button type="submit" size="icon" disabled={isLoading} className="size-10 shrink-0">
-                                        <Send className="size-4" />
+                                    <Button type="submit" size="icon" disabled={isLoading} className="size-11 shrink-0 rounded-[16px] shadow-sm active:scale-95 transition-all">
+                                        <Send className="size-4.5" />
                                     </Button>
                                 </form>
                             </CardFooter>
@@ -155,7 +161,7 @@ export function ChatBot() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-4 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+                className="size-14 bg-primary text-primary-foreground rounded-[20px] shadow-2xl flex items-center justify-center hover:bg-primary/90 transition-all duration-300 transform-gpu"
             >
                 {isOpen ? <X className="size-6" /> : <MessageCircle className="size-6" />}
             </motion.button>
